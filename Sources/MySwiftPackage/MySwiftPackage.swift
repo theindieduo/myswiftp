@@ -15,23 +15,23 @@ public class MyLibrary {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("Error during API request: \(error.localizedDescription)")
-                completion(.failure(error))
+//                completion(.failure(error))
                 return
             }
 
             guard let data = data else {
                 print("No data received")
-                completion(.failure(NSError(domain: "Data error", code: 0, userInfo: nil)))
+//                completion(.failure(NSError(domain: "Data error", code: 0, userInfo: nil)))
                 return
             }
 
             do {
                 let quotesResponse = try JSONDecoder().decode(QuotesResponse.self, from: data)
                 print("Successfully decoded response")
-                completion(.success(quotesResponse.quotes))
+//                completion(.success(quotesResponse.quotes))
             } catch {
                 print("Error decoding JSON: \(error.localizedDescription)")
-                completion(.failure(error))
+//                completion(.failure(error))
             }
         }
 
