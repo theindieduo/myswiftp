@@ -28,6 +28,7 @@ public class MyLibrary {
             do {
                 let quotesResponse = try JSONDecoder().decode(QuotesResponse.self, from: data)
                 print("Successfully decoded response")
+                print("decoded response : \(quotesResponse.quotes)")
 //                completion(.success(quotesResponse.quotes))
             } catch {
                 print("Error decoding JSON: \(error.localizedDescription)")
